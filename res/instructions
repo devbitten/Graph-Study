@@ -1,0 +1,22 @@
+Implement Breadth First search and Depth First Search for a graph. 
+Your program should output at every step, nodes in the fringe, and 
+the current node traversed. Show the output on the graph in the 
+attached file. Finally, the program must output the complete sequence 
+of nodes traversed. Note that the sequence depends on the  whether 
+you follow DFS or BFS. Node 0 is the start node. You should submit 
+code and the screenshot of output in a single word file.
+
+Note: To show the queue content, you can use two queues for that 
+purpose, when you dequeue an element, display it, and finally enqueue 
+the element in the other queue. And then in the end, all the elements 
+goes back to the original queue. Same with the stack.
+
+Your program should accept following file as an input. You have to 
+write code to process this input. You should define and use adjacency 
+list representation of graph.
+
+The input in the file is in this format:
+
+First line is number of nodes.
+
+Rest of lines are in this format: node number (node degree) : adjacency list

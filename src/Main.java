@@ -10,13 +10,16 @@ public class Main {
 		Scanner in = new Scanner(System.in);
 		Graph g;
 		
-		System.out.println("*******************************************");
-		System.out.println("* Please select your input!               *");
-		System.out.println("* [1] to perform a Breadth-first Search   *");
-		System.out.println("* [2] to perform a Depth-first Search     *");
-		System.out.println("* [3] to change the file input            *");
-		System.out.println("* [4] to exit program                     *");
-		System.out.println("*******************************************");
+		System.out.println("******************************************************");
+		System.out.println("* Please select your input!                          *");
+		System.out.println("* [1] to perform a Breadth-first Search (DEFAULT)    *");
+		System.out.println("* [2] to perform a Depth-first Search (DEFAULT)      *");
+		System.out.println("*  ~~~ DEFAULT SETTINGS: Start node = 0, search all  *");
+		System.out.println("* [3] to perform a Breadth-first Search (CUSTOM)     *");
+		System.out.println("* [4] to perform a Depth-first Search (CUSTOM)       *");
+		System.out.println("* [5] to change the file input                       *");
+		System.out.println("* [0] to exit program                                *");
+		System.out.println("******************************************************");
 		
 		//Code for getting the user's choice, with minor input validation
 		System.out.print("User's choice: ");
@@ -31,19 +34,28 @@ public class Main {
 		//Execute the user's choice
 		switch(userChoice){
 		case 1:
-			System.out.println("You have chosen to perform BFS.");
-			adjacencyListToGraph();
+			System.out.println("You have chosen to perform BFS (default settings).");
+			g = adjacencyListToGraph();
+			GraphSearch.performBFS(g, 0);
 			break;
 		case 2:
-			System.out.println("You have chosen to perform DFS.");
+			System.out.println("You have chosen to perform DFS (default settings).");
 			adjacencyListToGraph();
 			break;
 		case 3:
+			System.out.println("You have chosen to perform BFS (custom settings).");
+			adjacencyListToGraph();
+			break;
+		case 4:
+			System.out.println("You have chosen to perform DFS (custom settings).");
+			adjacencyListToGraph();
+			break;
+		case 5:
 			System.out.println("Please type the address of the file you would like to use.");
 			System.out.println(/*TODO CLEANUP*/ "e.g. C://BLAH/DIRECTORY");
 			//TODO : adjacencyListToGraph(<<file location >>)
 			break;
-		case 4:
+		case 0:
 			System.out.println("Thank you for using the program.");
 			System.exit(0);
 			break;
@@ -69,7 +81,7 @@ public class Main {
 			BufferedReader br = new BufferedReader(new FileReader("res/DFSBFSinput.dat"));
 			
 			//Reads the line that tells how many vertexes there are
-			Graph g = new Graph(Integer.parseInt(br.readLine()));
+			g = new Graph(Integer.parseInt(br.readLine()));
 			
 			while((line = br.readLine()) != null){
 				addVertexToGraph(g, line);

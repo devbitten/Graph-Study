@@ -1,0 +1,48 @@
+This is not a group project. Implement the solution to 
+one of following set of problems. Your solution must 
+follow state space search strategy. You can use any 
+programming language of your choice. You should pick 
+appropriate state description, operator function, fringe, 
+path cost and a search strategy.
+
+Your program should output a sequence of actions leading 
+from initial state to goal state. You must submit code 
+and screen shot of outputs in the same file. You must 
+indicate in what format an input should be provided to 
+the program if there is any.
+
+ In some problems, initial state can be given as an input 
+ to the program (for example, 8-puzzle). Your program 
+ should prompt the user to provide input in certain form. 
+ However, some problems have fixed initial state (For 
+ example, 8 queen, cannibal and missionary, etc.).
+
+Please note that below problems will be equally divided 
+among students in the class. For example, if we have 30 
+students in the class, no more than 5 students will have 
+the same problem. Problems will be assigned on first 
+come first serve basis. To be safe, you should indicate 
+your choice by providing three problems of your choosing 
+in the order of your preference, most preferred first. 
+There is a thread created in discussion section, you 
+should indicate your choice by replying in that thread.
+
+8 Puzzle Problem (Refer to Lecture Notes)
+Tower of Hanoi (See description in next post)
+Cannibal and Missionary (See description in next post)
+River Problem (Refer to Lecture Note)
+Travelling Salesman (See description in next post)
+8 queen problem (Refer to Lecture Notes)
+ Submission Format: You must submit all your code and 
+ screenshot of outputs in a single word file.
+
+Plagiarism will not be tolerated. You should not copy 
+code from online resources or from your class mates. 
+Please note that I will be using following strategies 
+to identify whether it is your work or not: 
+
+Plagiarism checker software.
+Search engines
+Conducting interviews in my office. The interview will 
+involve the explanation of your code and/or writing a 
+piece of code in my office for anything of my choosing.
