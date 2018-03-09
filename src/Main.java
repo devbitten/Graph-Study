@@ -3,13 +3,12 @@ import java.io.*;
 
 public class Main {
 	
-	Graph g;	//Graph the user will be working with
-	
 	public static void main(String[] args){
 		
 		//Variables for user selection
 		int userChoice = 0;
 		Scanner in = new Scanner(System.in);
+		Graph g;
 		
 		System.out.println("*******************************************");
 		System.out.println("* Please select your input!               *");
@@ -62,14 +61,18 @@ public class Main {
 	 * @return void
 	 */
 	
-	public static void adjacencyListToGraph(){
+	public static Graph adjacencyListToGraph(){
+		Graph g = new Graph();
 		String line = null;
 		
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("res/DFSBFSinput.dat"));
 			
+			//Reads the line that tells how many vertexes there are
+			Graph g = new Graph(Integer.parseInt(br.readLine()));
+			
 			while((line = br.readLine()) != null){
-				addVertexToGraph(line);
+				addVertexToGraph(g, line);
 			}
 			
 			br.close();
@@ -78,10 +81,20 @@ public class Main {
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
+		return g;
 	}
 	// TODO override adjacencyListToGraph() with arguments that accepts arguments of file location
 	
-	public static void addVertexToGraph(String v){
-		System.out.println(v);
+	public static void addVertexToGraph(Graph g, String v){
+		String ex = v;
+		String delims = "[) (:]+";
+		String tokens[];
+		
+		tokens = ex.split(delims);
+		g.addVertex(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
+		//System.out.println("Vertex added code ran. not sure if successful tho");
+		for(int i = 2; i < tokens.length; i++){
+			g.addEdge(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[i]));
+		}
 	}
 }
